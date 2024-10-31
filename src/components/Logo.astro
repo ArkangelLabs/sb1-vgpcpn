@@ -1,0 +1,150 @@
+---
+---
+<div class="logo-container">
+	<div class="logo-glitch-wrapper">
+		<img 
+			src="https://hfenjzxyhvcogrhsgngf.supabase.co/storage/v1/object/public/Misc-Bucker-Public/mythril.png?t=2024-10-31T20%3A52%3A01.887Z" 
+			alt="Mythril Systems Logo" 
+			class="logo-image"
+		/>
+		<img 
+			src="https://hfenjzxyhvcogrhsgngf.supabase.co/storage/v1/object/public/Misc-Bucker-Public/mythril.png?t=2024-10-31T20%3A52%3A01.887Z" 
+			alt="Mythril Systems Logo" 
+			class="logo-image logo-glitch"
+			aria-hidden="true"
+		/>
+	</div>
+	<div class="logo-scanner"></div>
+	<div class="logo-glow"></div>
+</div>
+
+<style>
+	.logo-container {
+		position: relative;
+		display: inline-block;
+		padding: 20px;
+	}
+
+	.logo-glitch-wrapper {
+		position: relative;
+		display: inline-block;
+	}
+
+	.logo-image {
+		height: 50px;
+		width: auto;
+		object-fit: contain;
+		filter: brightness(0) invert(1);
+		position: relative;
+		z-index: 2;
+	}
+
+	.logo-glitch {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0;
+		animation: glitch 4s infinite;
+	}
+
+	.logo-scanner {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 300%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(169, 169, 169, 0.1) 45%,
+			rgba(169, 169, 169, 0.2) 50%,
+			rgba(169, 169, 169, 0.1) 55%,
+			transparent 100%
+		);
+		animation: scan 3s ease-in-out infinite;
+		z-index: 3;
+	}
+
+	.logo-glow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 120%;
+		height: 120%;
+		background: radial-gradient(
+			circle,
+			rgba(169, 169, 169, 0.15) 0%,
+			rgba(169, 169, 169, 0.1) 25%,
+			transparent 70%
+		);
+		animation: pulse 4s ease-in-out infinite;
+		z-index: 1;
+	}
+
+	@keyframes scan {
+		0%, 100% {
+			left: -100%;
+			opacity: 0;
+		}
+		40%, 60% {
+			opacity: 1;
+		}
+		98% {
+			left: 100%;
+			opacity: 0;
+		}
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 0.5;
+		}
+		50% {
+			transform: translate(-50%, -50%) scale(1.1);
+			opacity: 0.8;
+		}
+	}
+
+	@keyframes glitch {
+		0%, 40%, 60%, 100% {
+			transform: skew(0deg);
+			opacity: 0;
+		}
+		41% {
+			opacity: 1;
+			transform: skew(10deg);
+			filter: brightness(0) invert(1) drop-shadow(2px 0px rgba(169, 169, 169, 0.8));
+		}
+		45% {
+			opacity: 0.8;
+			transform: skew(-5deg);
+			filter: brightness(0) invert(1) drop-shadow(-2px 0px rgba(169, 169, 169, 0.8));
+		}
+		50% {
+			opacity: 0.9;
+			transform: skew(5deg);
+			filter: brightness(0) invert(1) drop-shadow(1px 0px rgba(169, 169, 169, 0.8));
+		}
+		55% {
+			opacity: 0.8;
+			transform: skew(-3deg);
+			filter: brightness(0) invert(1) drop-shadow(-1px 0px rgba(169, 169, 169, 0.8));
+		}
+	}
+
+	/* Add hover effect */
+	.logo-container:hover .logo-scanner {
+		animation-duration: 1.5s;
+	}
+
+	.logo-container:hover .logo-glitch {
+		animation-duration: 2s;
+	}
+
+	.logo-container:hover .logo-glow {
+		animation-duration: 2s;
+	}
+</style>
